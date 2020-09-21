@@ -155,3 +155,6 @@ The goal, methodology and results of your work are presented in a clear, concise
 
 ### Project Planning Link:
 https://docs.google.com/spreadsheets/d/1yyzyHakC6vQMlYIWn7tUhGPKG2bsyUFLjZCs7s34wJg/edit?usp=sharing
+
+### Project Colab Book (for reference):
+https://colab.research.google.com/drive/10pHq_oiV0KjDFJUEIefSUv4GH1gehOwp#scrollTo=6uN8ew4yocdY
