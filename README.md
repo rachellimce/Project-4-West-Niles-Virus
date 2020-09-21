@@ -152,3 +152,6 @@ The goal, methodology and results of your work are presented in a clear, concise
 | 2 | Meets Expectations | 1. The problem was framed appropriately for the audience. <br> 2. The level of technicality was appropriate to the target audience. <br> 3. The presentation was given within the allocated timeframe. <br> 4. The speaker's voice had volume and clarity. <br> 5. The presentation visuals were helpful and supportive. |
 | 3 | Exceeds Expectations | 1. The problem was expertly stated and compelling. <br> 2. The level of technicality was perfect for the target audience. <br> 3. The presentation was given within the allocated timeframe and paced evenly throughout. <br> 4. The speaker's voice was clear, understandable and consistent. <br> 5. The presentation visuals provided distinct insight, supported the speaker from the background, and were not distracting. |
 # Project4working
+
+### Project Planning Link:
+https://docs.google.com/spreadsheets/d/1yyzyHakC6vQMlYIWn7tUhGPKG2bsyUFLjZCs7s34wJg/edit?usp=sharing
