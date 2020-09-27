@@ -1,173 +1,120 @@
-# ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Kaggle Competition - Starter
+# ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Project 4
+Zi Xin | Rachel | David | Xavier
+# Predicting presence of West Nile Virus in mosquitos
 
-## Table of Contents
-- [Introduction](#introduction)
-- [Dataset](#dataset)
-- [Deliverables](#deliverables)
-- [Rubic](#rubic)
-- [Project Planning Link](#project-planning-link)
-- [Project Colab Book](#project-colab-book)
-- [Project Presentation](#project-presentation)
+### Introduction
 
-## Introduction
+West Nile virus (WNV) is a mosquito-borne infectious disease that flares up during mosquito season from summer to early fall. It first emerged in the eastern U.S. in 1999, and has now become the leading cause of mosquito-borne disease in the continental U.S. [[1]](https://www.cdc.gov/westnile/index.html)
 
-Welcome to your first week of work at the Disease And Treatment Agency, division of Societal Cures In Epidemiology and New Creative Engineering (DATA-SCIENCE). Time to get to work!
+WNV is most commonly spread to humans through infected mosquitos, usually of the genus _Culex_. [[2]](https://www.euro.who.int/__data/assets/pdf_file/0020/246170/Fact-sheet-West-Nile-virus-Eng.pdf) In most cases, WNV infection does not cause symptoms, but up to 20% of people who become infected with the virus develop symptoms ranging from a persistent fever, to serious neurological illnesses that can result in death. Currently, there is no human vaccine against WNV and prevention of the illness in humans is based on mosquito control. [[3]](https://www.euro.who.int/__data/assets/pdf_file/0020/246170/Fact-sheet-West-Nile-virus-Eng.pdf)
 
-Due to the recent epidemic of West Nile Virus in the Windy City, we've had the Department of Public Health set up a surveillance and control system. We're hoping it will let us learn something from the mosquito population as we collect data over time. Pesticides are a necessary evil in the fight for public health and safety, not to mention expensive! We need to derive an effective plan to deploy pesticides throughout the city, and that is **exactly** where you come in!
-
-## Dataset
-
-The dataset, along with description, can be found here: [https://www.kaggle.com/c/predict-west-nile-virus/](https://www.kaggle.com/c/predict-west-nile-virus/).
-
-**This is also where you will be submitting your code for evaluation**. We will be using the Kaggle Leaderboard to keep track of your score. The public leaderboard uses roughly 30% of the dataset to score an AUC (Area Under Curve) metric. [You can read more about the scoring metric here](https://www.kaggle.com/wiki/AreaUnderCurve).
-
-> If you do not already have a Kaggle account, you will need to sign up on the website.  Also note that you will be submitting a "Late Submission" on Kaggle because the official competition has ended.  You can use the leaderboard to see how your results compare against roughly 1300 other data science teams!
-
-You can submit predictions as many times as you want to Kaggle, but there is a limit of 5 submissions per day.  Be intentional with your submissions!
+In 2002, WNV first hit Chicago with 225 human cases reported that summer. In response, the Chicago Department of Public Health (CDPH) implemented city‐wide surveillance and mosquito control measures, which resulted in a dramatic decline of human cases in subsequent years. Chicago continues to have one of the most ro‐
+bust urban mosquito control programs in the country. [[4]](https://www.chicago.gov/content/dam/city/depts/cdph/food_env/general/West_Nile_Virus/WNV_2018databrief_FINALJan102019.pdf)
 
 
-#### Navigating Group Work
+### Problem Statement
 
-This project will be executed as a group.  To make your team as effective and efficient as possible you should do the create a shared GitHub repo and project planning document as described in the deliverables section below.
+The goal of this project is to assist the City of Chicago a.k.a Windy City and the CDPH in developing a model that can accurately predict when and where different species of mosquitos will test positive for WNV and identify the factors that are the strongest predictors of WNV presence.
 
-## Deliverables
-
-**GitHub Repo**
-
-1. Create a GitHub repository for the group. Each member should be added as a contributor.
-2. Retrieve the dataset and upload it into a directory named `assets`.
-3. Generate a .py or .ipynb file that imports the available data.
-
-**Project Planning**
-
-1. Define your deliverable - what is the end result?
-2. Break that deliverable up into its components, and then go further down the rabbit hole until you have actionable items. Document these using a project managment tool to track things getting done.  The tool you use is up to you; it could be Trello, a spreadsheet, GitHub issues, etc.
-3. Begin deciding priorities for each task. These are subject to change, but it's good to get an initial consensus. Order these priorities however you would like.
-4. You planning documentation (or a link to it) should be included in your GitHub repo.
-
-**EDA**
-
-1. Describe the data. What does it represent? What types are present? What does each data points' distribution look like? Discuss these questions, and your own, with your partners. Document your conclusions.
-2. What kind of cleaning is needed? Document any potential issues that will need to be resolved.
-
-**Note:** As you know, EDA is the single most important part of data science. This is where you should be spending most of your time. Knowing your data, and understanding the status of its integrity, is what makes or breaks a project.
-
-**Modeling**
-
-1. The goal is of course to build a model and make predictions that the city of Chicago can use when it decides where to spray pesticides! Your team should have a clean Jupyter Notebook that shows your EDA process, your modeling and predictions.
-2. Conduct a cost-benefit analysis. This should include annual cost projections for various levels of pesticide coverage (cost) and the effect of these various levels of pesticide coverage (benefit). *(Hint: How would we quantify the benefit of pesticide spraying? To get "maximum benefit," what does that look like and how much does that cost? What if we cover less and therefore get a lower level of benefit?)*
-3. Your final submission CSV should be in your GitHub repo.
-
-**Presentation**
-* Audience: You are presenting to members of the CDC. Some members of the audience will be biostatisticians and epidemiologists who will understand your models and metrics and will want more information. Others will be decision-makers, focusing almost exclusively on your cost-benefit analysis. Your job is to convince both groups of the best course of action in the same meeting and be able to answer questions that either group may ask.
-* The length of your presentation should be about 20 minutes (a rough guideline: 2 minute intro, 10 minutes on model, 5 minutes on cost-benefit analysis, 3 minute recommendations/conclusion).  Touch base with your local instructor... er, manager... for specific logistic requirements!
-
----
-
-**Your project is due at 9:00 AM SGT on Monday, Sept 28th 2020.**
-
----
-
-### Project Feedback + Evaluation
-
-For all projects, students will be evaluated on a simple 4 point scale (0-3 inclusive). Instructors will use this rubric when scoring student performance on each of the core project requirements:
-
-Score | Expectations
------ | ------------
-**0** | _Does not meet expectations. Try again._
-**1** | _Approaching expectations. Getting there..._
-**2** | _Meets expectations. Great job._
-**3** | _Surpasses expectations. Brilliant!_
-
-### Rubric
-
-Your final assessment ("grade" if you will) will be calculated based on a topical rubric (see below).  For each category, you will receive a score of 0-3.  From the rubric you can see descriptions of each score and what is needed to attain those scores.
-
-For Project 3 the evaluation categories are as follows:
-- [Organization](#organization)
-- [Data Structures](#data-structures)
-- [Python Syntax and Control Flow](#python-syntax-and-control-flow)
-- [Probability and Statistics](#probability-and-statistics)
-- [Modeling](#modeling)
-- [Presentation](#presentation)
-
-#### Organization
-
-Clearly commented, annotated and sectioned Jupyter notebook or Python script.  Comments and annotations add clarity, explanation and intent to the work.  Notebook is well-structured with title, author and sections. Assumptions are stated and justified.
+If outbreaks of WNV in mosquitos can be reliably predicted, the City of Chicago and CPHD will be able to more efficiently and effectively coordinate resources towards preventing transmission of this potentially deadly virus.
 
 
-| Score | Status                     | Examples                                                                                                                                                                                                                                         |
-|-------|----------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 0     | Does not Meet Expectations | 1. Comments and annotations are **absent** <br> 2. There is no clear notebook structure <br> 3. Assumptions are not stated                                                                                                                                       |
-| 1     | Approaching Expectations   | 1. Comments are present but generally unclear or uninformative (e.g., comments do not clarify, explain or interpret the code) <br> 2. There are some structural components like section/subsection headings <br> 3. Assumptions are stated but not justified |
-| 2     | Meets Expectations         | 1. Comments and annotations are clear and informative <br> 2. There is a clear structure to the notebook with title and appropriate sectioning <br> 3. Assumptions are both stated and justified                                                             |
-| 3     | Exceeds Expectations       | 1. Comments and annotations are clear, informative and insightful <br> 2. There is a helpful and cogent structure to the notebook that clarifies the analysis flow <br> 3. Assumptions are stated, justified and backed by evidence or insight               |
+### Problem Approach
 
-#### Data Structures
+Predicting the presence of WNV is a binary classification problem. To that end, we tested several classification models listed below using a total of 66 feature variables. The evaluation metrics used will be AUC score and sensitivity (recall).
 
-Python data structures including lists, dictionaries and imported structures (e.g. DataFrames), are created and used correctly.  The appropriate data structures are used in context.  Data structures are created and accessed using appropriate mechanisms such as comprehensions, slices, filters and copies.
+- Logistic regression
+- Support vector machine
+- Bagged decision trees
+- Extra trees
+- Random forest
+- AdaBoost
+- Gradient boosting
+- XGBoost
 
-| Score | Status | Examples |
-|-------|----------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 0 | Does not Meet Expectations | 1. Appropriate data structures are not identified or implemented <br> 2. Data structures are not created appropriately <br> 3. Data structures are not accessed or used effectively |
-| 1 | Approaching Expectations | 1. Contextually appropriate data structures are identified in some but not all instances <br> 2. Data structures are created successfully but lacked efficiency or generality (e.g., structures were hard-coded with values that limits generalization; brute-force vs automatic creation/population of data) <br> 3. Data structures are accessed or used but best practices are not adopted |
-| 2 | Meets Expectations | 1. Contextually appropriate data structures are identified and implemented given the context of the problem <br> 2. Data structures are created in an effective manner <br> 3. Data structures are accessed and used following general programming and Pythonic best practices |
-| 3 | Exceeds Expectations | 1. Use or creation of data structures is clever and insightful <br> 2. Data structures are created in a way that reveals significant Pythonic understanding <br> 3. Data structures are used or applied in clever or insightful ways |
+## Conclusion and Recommendations
 
+In this analysis, we explored the performance of several models in predicting the presence of WNV in mosquitos. Using AUC score and sensitivity as our main evaluation metrics, the Random Forest classifier, which obtained an AUC score of 0.846 and sensitivity of 0.819, was selected as the final production model.
 
-#### Python Syntax and Control Flow
+# ![](datasets/top20feat.jpg)
 
-Python code is written correctly and follows standard style guidelines and best practices.  There are no runtime errors.  The code is expressive while being reasonably concise.
+As seen from the model's top 20 features, factors related to seasonality, weather, location and mosquito species are highly important in predicting the presence of WNV. In particular, seasonality and weather-related features play the biggest role as they made up the majority of the top 20 features. This aligns with the fact the WNV is a seasonal virus that emerges during summer as hot temperatures favour mosquito-breeding.
 
-| Score | Status | Examples |
-|-------|----------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 0 | Does not Meet Expectations | 1. Code has systemic syntactical issues <br> 2. Code generates incorrect results <br> 3. Code is disorganized and needlessly difficult |
-| 1 | Approaching Expectations | 1. Code is generally correct with some runtime errors <br> 2. Code logic is generally correct but does not produce the desired outcome <br> 3. Code is somewhat organized and follows some stylistic conventions |
-| 2 | Meets Expectations | 1. Code is syntactically correct (no runtime errors) <br> 2. Code generates desired results (logically correct) <br> 3. Code follows general best practices and style guidelines |
-| 3 | Exceeds Expectations | 1. Code adopts clever or advanced syntax <br> 2. Code generates desired results in an easily consumable manner (e.g., results are written to screen, file, pipeline, etc, as appropriate within the flow of the analysis) <br> 3. Code is exceptionally expressive, well formed and organized |
+In our cost-benefit analysis of mosquito spraying, we found that spraying seems to be inversely correlated with WNV incidence. However, we do not have sufficient data at hand to quantify the effectiveness of spraying and thus cannot form a strong conclusion on whether the benefits of spraying are justified by its costs. Furthermore, it is difficult to isolate the effects of spraying as the spread of WNV is also influenced by other variables such as geographical location and weather.
 
+Whilst mosquito spraying certainly has its benefits, it is best for the CDPH to take a multi-pronged approach in tackling WNV. CDPH could drive educational campaigns to teach the community how they can help to prevent mosquito breeding in their homes. For example, ensuring that they remove all standing water so that mosquitos will not lay their eggs there.
 
-#### Probability and Statistics
+For spraying, since WNV incidence is the highest in August, spraying efforts should be concentrated in August for greatest effect.
 
-Descriptive and inferential statistics are calculated and applied where appropriate.  Probabilistic reasoning is demonstrated.  There is a clear understanding of how probability and statistics affects the analysis being performed.
+## Data description
 
-| Score | Status | Examples |
-|-------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 0 | Does not Meet Expectations | 1. Descriptive statistical calculations are absent <br> 2. Inferential statistical calculations are absent <br> 3. Probabilities or statistics are not relevant given the context of the analysis |
-| 1 | Approaching Expectations | 1. Descriptive statistics are present in some cases <br> 2. Inferential statistics are present in some cases <br> 3. Probabilities or statistics are somewhat relevant to the analysis context |
-| 2 | Meets Expectations | 1. Descriptive statistics are calculated in all relevant situations <br> 2. Inferential statistics are calculated in all relevant situations <br> 3. Probabilities or statistics are relevant to the analysis |
-| 3 | Exceeds Expectations | 1. Descriptive statistics are calculated, interpreted and visualized (where appropriate) <br> 2. Inferential statistics are calculated, interpreted and visualized (where appropriate) <br> 3. Probabilities or statistics are leveraged to draw meaningful or insightful conclusions |
+**Train/Test Data** (split into separate train and validation sets for modelling) – Every week from late spring through the fall, mosquitos in traps across the city are tested for presence of WNV. These test results are summarised by date from May 2007 to Oct 2014, trap, and species. Location data is also provided for all the traps.
 
-#### Modeling
-
-Data is appropriately prepared for modeling.  Model choice matches the context of the data and the analysis.  Model hyperparameters are optimized.  Model evaluation is robust.  Model results are extracted and explained either visually, numerically or narratively.
-
-| Score | Status | Examples |
-|-------|----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 0 | Does not Meet Expectations | 1. Data is not prepared for modeling.<br>2. Models are not implemented or not implemented fully.<br>3. Model hyperparameters are not considered.<br>4. Model evaluation is not performed.<br>5. Model results are unavailable or not extracted. |
-| 1 | Approaching Expectations | 1. Data has some null values, inappropriate types and/or improper handling of categorical labels.<br>2. Model choice is questionable given the objective of the analysis.<br>3. Model hyperparameters are insufficiently or not optimized.<br>4. Model evaluation is performed but the evaluation is not generalizable.<br>5. Model results are extracted but not explained or interpreted. |
-| 2 | Meets Expectations | 1. Data is free from nulls and correctly typed for the given model.<br>2. Model choice is appropriate to the analysis.<br>3. Model hyperparameters are optimally selected.<br>4. Model evaluation reflects generalizeable performance.<br>5. Model results are extracted and explained either visually, numerically or naratively. |
-| 3 | Exceeds Expectations | 1. Data is pristinely prepared with creative or useful feature engineering.<br>2. Model selection is justified and demonstrates an awareness of tradeoffs.<br>3. Model hyperparameters are optimized and the optimization is demonstrated/justified.<br>4. Model evaluation reflects generalizable performance and is interpreted in the context of the analysis.<br>5. Model results are explained, interpreted and related to the overarching analysis goals. |
+Train Data consist of information for 2007, 2009, 2011 and 2013, while Test Data consist of information for 2008, 2010, 2012 and 2014.
 
 
-#### Presentation
+**Spray Data** – Data is provided for the locations where the City of Chicago did mosquito spraying in 2011 and 2013. Spraying can reduce the number of mosquitos in the area, and therefore might eliminate the appearance of WNV.
 
-The goal, methodology and results of your work are presented in a clear, concise and thorough manner.  The presentation is appropriate for the specified audience, and includes relevant and enlightening visual aides as appropriate.
+**Weather data** – Daily weather records are provided for the period 2007 to 2014 from 2 weather stations. Hot and dry weather conditions are conducive for a seasonal virus like WNV, and it is worth using weather data to improve the prediction of WNV presence.
 
-| Score | Status | Examples |
-|-------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 0 | Does not Meet Expectations | 1. The problem was not well explained or ambiguous. <br> 2. The level of technicality was far above or below the target audience. <br> 3. The presentation went substantially over or under time. <br> 4. The speaker's voice was difficult to hear of unclear. <br> 5. The presentation visuals did not seem to support the talk. |
-| 1 | Approaching Expectations | 1. The problem was stated but was not 100% clear. <br> 2. The level of technicality was was good at times, but too low or too high at other times given the target audience. <br> 3. The presentation was given went slightly over or under time. <br> 4. The speaker's voice was at times difficult to understand. <br> 5. The presentation visuals were generally helpful, but some of them were either too complex or disconnected from the narrative. |
-| 2 | Meets Expectations | 1. The problem was framed appropriately for the audience. <br> 2. The level of technicality was appropriate to the target audience. <br> 3. The presentation was given within the allocated timeframe. <br> 4. The speaker's voice had volume and clarity. <br> 5. The presentation visuals were helpful and supportive. |
-| 3 | Exceeds Expectations | 1. The problem was expertly stated and compelling. <br> 2. The level of technicality was perfect for the target audience. <br> 3. The presentation was given within the allocated timeframe and paced evenly throughout. <br> 4. The speaker's voice was clear, understandable and consistent. <br> 5. The presentation visuals provided distinct insight, supported the speaker from the background, and were not distracting. |
-# Project4working
+## Data dictionary
 
-### Project Planning Link:
-https://docs.google.com/spreadsheets/d/1yyzyHakC6vQMlYIWn7tUhGPKG2bsyUFLjZCs7s34wJg/edit?usp=sharing
-
-### Project Colab Book:
-(for reference)
-https://colab.research.google.com/drive/10pHq_oiV0KjDFJUEIefSUv4GH1gehOwp#scrollTo=6uN8ew4yocdY
-
-### Project Presentation:
-https://docs.google.com/presentation/d/1TPX_6gNwdFs1O4XUb4rgYWr3LoAMSrxqm47WfxcXGt4/edit?usp=sharing
+| Feature                      | Variable type | Datatype | Dataset            | Description                                                                     |
+|------------------------------|---------------|----------|--------------------|---------------------------------------------------------------------------------|
+| Id                           | Norminal      | int64    | test               |  the id of the record                                                           |
+| Date                         | datetime      | datetime | train and test     | date that the WNV test is performed                                             |
+| Address                      | Norminal      | object   | train and test     | approximate address of the location of trap                                     |
+| Species                      | Norminal      | object   | train and test     | species of mosquito                                                             |
+| Block                        | Norminal      | int64    | train and test     | block number of address                                                         |
+| Street                       | Norminal      | object   | train and test     | Street name                                                                     |
+| Trap                         | Norminal      | object   | train and test     | Id of the trap                                                                  |
+| AddressNumberAndStreet       | Norminal      | object   | train and test     | approximate address returned from GeoCoder                                      |
+| Latitude                     | continuous    | float64  | train and test     | Latitude  returned from GeoCoder                                                |
+| Longitude                    | continuous    | float64  | train and test     | Longitude returned from GeoCoder                                                |
+| AddressAccuracy              | Norminal      | int64    | train and test     | accuracy returned from GeoCoder                                                 |
+| NumMosquitos                 | discrete      | int64    | train and test     | number of mosquitoes caught in this trap                                        |
+| WnvPresent                   | discrete      | int64    | train and test     | 1 means WNV is present, and 0 means not present.                                |
+| Station                      | discrete      | int64    | weather            | Station 1 or 2 where weather data is collected                                  |
+| Date                         | datetime      | datetime | weather            | Date of weather record                                                          |
+| Tmax                         | discrete      | int64    | weather            | Max temperature in Fahrenheit                                                   |
+| Tmin                         | discrete      | int64    | weather            | Min temperature in Fahrenheit                                                   |
+| Tavg                         | continuous    | float64  | weather            | Avg temperature in Fahrenheit                                                   |
+| Depart                       | discrete      | float64  | weather            | The difference from normal temperatures for the last 30yrs                      |
+| DewPoint                     | discrete      | int64    | weather            | Dew Point temperature                                                           |
+| WetBulb                      | discrete      | int64    | weather            | Web Bulb temperature                                                            |
+| Heat                         | continuous    | float64  | weather            | Difference between daily avg temperature and 65 Deg F                           |
+| Cool                         | continuous    | float64  | weather            | Difference between daily avg temperature and 65 Deg F                           |
+| Sunrise                      | datetime      | datetime | weather            | Sunrise timing                                                                  |
+| Sunset                       | datetime      | datetime | weather            | Sunset timing                                                                   |
+| CodeSum                      | norminal      | object   | weather            | Weather Phenomena                                                               |
+| Depth                        | continuous    | float64  | weather            | Snow inches                                                                     |
+| Water1                       | continuous    | float64  | weather            | Snow/Ice on ground                                                              |
+| SnowFall                     | continuous    | float64  | weather            | Snowfall in inches                                                              |
+| PrecipTotal                  | continuous    | float64  | weather            | Rainfall and melted snow (inches)                                               |
+| StnPressure                  | continuous    | float64  | weather            | Avg Station Pressure                                                            |
+| SeaLevel                     | continuous    | float64  | weather            | Avg Sea level Presure                                                           |
+| ResultSpeed                  | continuous    | float64  | weather            | Resultant Wind Speed                                                            |
+| ResultDir                    | continuous    | int64    | weather            | Resultant Wind Direction                                                        |
+| AvgSpeed                     | continuous    | float64  | weather            | Avg WInd Speed                                                                  |
+| Date                         | datetime      | datetime | spray              | Date of the spray                                                               |
+| Time                         | datetime      | datetime | spray              | Time of the spray                                                               |
+| Latitude                     | continuous    | float64  | spray              | Latitude of the spray                                                           |
+| Longitude                    | continuous    | float64  | spray              | Latitude of the spray                                                           |
+| year                         | discrete      | int64    | engineered feature | year corresponding in train data                                                |
+| month                        | discrete      | int64    | engineered feature | month corresponding in train data                                               |
+| weekofyear                   | discrete      | int64    | engineered feature | week of the year corresponding in train data                                    |
+| yearmonth                    | norminal      | object   | engineered feature | yearmonth string corresponding in train data                                    |
+| weekday                      | discrete      | int64    | engineered feature | weekday corresponding in train data                                             |
+| closest_station              | discrete      | int64    | engineered feature | the closer weather station to each trap                                         |
+| row_count                    | discrete      | int64    | engineered feature | number of "duplicate" rowsto get an estimate for nummosquitos                   |
+| intensity_acc                | continuous    | float64  | engineered feature | calculates the "intensity" of a spray for each observation in the train dataset |
+| daytime                      | discrete      | int32    | engineered feature | total number of minutes from Sunrise to Sunset                                  |
+| trap_weight                  | continuous    | float64  | engineered feature | weightage of the trap based on Wnvpresent/no. of times sampled                  |
+| rhumidity                    | continuous    | float64  | engineered feature | relative humidity derived from dewpoint and tavg                                |
+| tavg_7/10/14/30/60/90        | continuous    | float64  | engineered feature | Rolling temp averages for 7, 10, 14, 30, 60, 90 days                            |
+| resultspeed_7/10/14/30/60/90 | continuous    | float64  | engineered feature | Rolling wind speed averages for 7, 10, 14, 30, 60, 90 days                      |
+| dewpoint_7/10/14/30/60/90    | continuous    | float64  | engineered feature | Rolling dewpoint averages for 7, 10, 14, 30, 60, 90 days                        |
+| rhumidity_7/10/14/30/60/90   | continuous    | float64  | engineered feature | Rolling relative humidity averages for 7, 10, 14, 30, 60, 90 days               |
+| tmax_7/10/14/30/60/90        | continuous    | float64  | engineered feature | Rolling max temp averages for 7, 10, 14, 30, 60, 90 days                        |
+| tmin_7/10/14/30/60/90        | continuous    | float64  | engineered feature | Rolling min temp averages for 7, 10, 14, 30, 60, 90 days                        |
+| preciptotal_7/10/14/30/60/90 | continuous    | float64  | engineered feature | Rolling preciptotal averages for 7, 10, 14, 30, 60, 90 days                     |
